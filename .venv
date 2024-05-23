@@ -1,0 +1,19 @@
+from flask import Flask
+from groq import Groq
+
+app = Flask(__name__)
+client = Groq(api_key = "")
+
+@app.route('/')
+def base():  # put application's code here
+    messages = [
+        {"role": "system", "content": "You only speak spanish", },
+        {"role": "user", "content": "Explain the importance of fast language models", },
+    ]
+    chat_completion = client.chat.completions.create( messages = messages ,model="llama3-8b-8192",)
+
+    messages.append({"role":"assistant", "content":chat_completion.choices[0].message.content})
+    return chat_completion.choices[0].message.content
+
+if __name__ == '__main__':
+    app.run()

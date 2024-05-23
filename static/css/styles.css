@@ -1,0 +1,80 @@
+/* Agrega este bloque de CSS para estilizar la barra de escribir */
+.chat-input-container {
+    display: flex; /* Usar flexbox para organizar los elementos dentro del contenedor */
+    padding: 0px 0; /* Espaciado interno arriba y abajo */
+}
+
+/* historial de conversaciones */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px; /* Ancho */
+    overflow-y: auto;
+    border-right: 1px solid #000000;
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Es el contenedor de la barra de entrada a la estructura de tu HTML */
+.main-chat {
+    margin-left: 270px; /* Mover el contenido principal para dejar espacio a la barra lateral */
+    padding: 20px;
+    flex-grow: 1; /* Permitir que el contenedor principal crezca */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    justify-content: space-between; /* Asegura que el contenedor de entrada esté en la parte inferior */
+}
+
+/* Asegúra el contenedor de mensajes para que no se superponga con el campo de entrada */
+.chat-messages {
+    flex-grow: 1; /* Permitir que el contenedor de mensajes crezca */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical */
+    padding: 10px;
+    border: 1px solid #810cea; /* Borde alrededor del contenedor de mensajes */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: rgba(174, 154, 192, 0.94); /* Color de fondo */
+    margin-bottom: 10px; /* Espacio debajo para el campo de entrada */
+}
+
+.message.user-message {
+    background-color: #1c9ab6; /* Color azul de Bootstrap */
+    color: #000000; /* Texto blanco para contraste */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 80%; /* Ajusta el ancho máximo de los mensajes */
+    align-self: flex-end; /* Alinea los mensajes a la derecha */
+}
+
+.message.bot-message {
+    background-color: #0dda6f; /* Color gris claro para el bot */
+    color: black; /* Texto negro */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 80%; /* Ajusta el ancho máximo de los mensajes */
+    align-self: flex-start; /* Alinea los mensajes a la izquierda */
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message p {
+    margin: 0; /* Eliminar el margen por defecto de los párrafos */
+}
+
+.bot-response {
+    background-color: rgba(146, 96, 190, 0.69); /* Color de fondo para las respuestas del bot */
+}
+
+body {
+    background-color: rgba(39, 30, 47, 0.69); /* Cambia el color de fondo de la página */
+}
+
+
+
+
